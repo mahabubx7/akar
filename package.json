@@ -1,0 +1,87 @@
+{
+  "name": "akar",
+  "version": "1.0.0-beta.1",
+  "description": "Akar is a simple and lightweight JavaScript library for building user interfaces.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "prebuild": "rimraf dist"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.x"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "release-it": "^17.8.2",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahabubx7/akar.git"
+  },
+  "bugs": "https://github.com/mahabubx7/akar/issues",
+  "license": "MIT",
+  "author": "Mahabub <mahabubx7@gmail.com>",
+  "keywords": [
+    "akar",
+    "akarjs",
+    "validation",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "release-it": {
+    "git": {
+      "tagName": "v${version}",
+      "commitMessage": "chore(release): v${version}",
+      "requireUpstream": true,
+      "requireCleanWorkingDir": true,
+      "tagAnotation": "v${version}",
+      "push": true
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "tsup": {
+    "dts": true,
+    "target": "es2018",
+    "format": ["esm", "cjs"],
+    "splitting": false,
+    "sourceMap": true,
+    "minify": false,
+    "clean": false,
+    "keepNames": true,
+    "outDir": "dist",
+    "entry": [
+      "lib/index.ts",
+      "index.ts"
+    ]
+  }
+}
