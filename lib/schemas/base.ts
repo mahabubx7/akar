@@ -1,4 +1,13 @@
-import { AkarBase } from "./base"
+export abstract class AkarBase<T> {
+  abstract parse(input: any): {
+    value?: T
+    errors?: { field: string; reason: string; value?: any }[]
+  }
+
+  optional(): AkarOptionalSchema<T> {
+    return new AkarOptionalSchema(this)
+  }
+}
 
 export class AkarOptionalSchema<T> extends AkarBase<T | undefined> {
   constructor(private schema: AkarBase<T>) {

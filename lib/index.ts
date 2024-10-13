@@ -6,25 +6,27 @@
  * -----------------------------------------------------------------------
  */
 
-import { ANumber, AObject, AOptional, AString } from "./schemas"
-// import { AInfer } from "./schemas/infer"
-import { BaseSchema } from "./types"
+import {
+  AkarArray,
+  AkarBase,
+  AkarBoolean,
+  AkarNumber,
+  AkarObject,
+  AkarString
+} from "./schemas"
 
-export type * from "./helpers"
-export type * from "./schemas"
-export type * from "./types"
-export { a as akar }
-
-const Akar = {
-  string: () => new AString(),
-  number: () => new ANumber(),
-  object: <T extends { [key: string]: BaseSchema<any> }>(shape: T) =>
-    new AObject(shape),
-  optional: <T>(schema: BaseSchema<T>) => new AOptional(schema)
-  // array: <T>(schema: BaseSchema<T>) => new AArray(schema)
-  // infer: <T>(schema: BaseSchema<T>) => new AInfer(schema)
+export const a = {
+  string: () => new AkarString(),
+  number: () => new AkarNumber(),
+  boolean: () => new AkarBoolean(),
+  object: <T extends object>(shape: { [K in keyof T]: AkarBase<T[K]> }) =>
+    new AkarObject<T>(shape),
+  array: <T>(schema: AkarBase<T>) => new AkarArray<T>(schema)
 }
 
-// short-naming the default export
-const a = { ...Akar }
-export default a
+export type * from "./helpers/infer"
+export type * from "./types"
+
+// default export
+const Akar = { ...a }
+export default Akar

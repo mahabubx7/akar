@@ -1,17 +1,17 @@
-import { ValidationResult } from "./result"
+// export type InferSchema<T extends Record<string, Schema<any>>> = {
+//   [K in keyof T]: T[K] extends Schema<infer U> ? U : never
+// }
 
-export interface BaseSchema<T> {
-  parse(input: unknown): ValidationResult<T>
-}
-
-// export type InferType<T extends BaseSchema<any>> = T extends BaseSchema<infer U>
+// export type InferSchema<T> = T extends ObjectSchema<infer Shape>
+//   ? { [K in keyof Shape]: InferSchema<Shape[K]> }
+//   : T extends Schema<infer U>
 //   ? U
+//   : T extends string
+//   ? string
+//   : T extends number
+//   ? number
+//   : T extends Array<infer U>
+//   ? Array<InferSchema<U>>
+//   : T extends object
+//   ? { [K in keyof T]: InferSchema<T[K]> }
 //   : never
-
-// export type InferTypeOptional<T extends BaseSchema<any>> = T extends BaseSchema<
-//   infer U
-// >
-//   ? U | undefined
-//   : never
-
-// export const infer = () => {}
