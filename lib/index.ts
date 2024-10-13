@@ -1,15 +1,15 @@
 /**
- * -----------------------------------------------------------------------
- * Akar (c) 2024
- * @version 1.0.0-beta.1
+ * Akar.js
+ * (c) 2024, @mahabubx7
+ * @since 0.1.0-beta
  * @license MIT
- * -----------------------------------------------------------------------
  */
 
 import {
   AkarArray,
   AkarBase,
   AkarBoolean,
+  AkarEnum,
   AkarNumber,
   AkarObject,
   AkarString
@@ -21,12 +21,12 @@ export const a = {
   boolean: () => new AkarBoolean(),
   object: <T extends object>(shape: { [K in keyof T]: AkarBase<T[K]> }) =>
     new AkarObject<T>(shape),
-  array: <T>(schema: AkarBase<T>) => new AkarArray<T>(schema)
+  array: <T>(schema: AkarBase<T>) => new AkarArray<T>(schema),
+  enum: <T extends readonly string[]>(values: T) => new AkarEnum<T>(values)
 }
 
-// export type * from "./helpers/infer"
 export type * from "./types"
 
-// default export
+// Default export
 const Akar = { ...a }
 export default Akar

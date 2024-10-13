@@ -1,3 +1,10 @@
+/**
+ * Akar.js
+ * (c) 2024, @mahabubx7
+ * @since 0.1.0-beta
+ * @license MIT
+ */
+
 export const Countries = {
   afghanistan: { name: "Afghanistan", code: "AF", phoneCode: "+93" },
   albania: { name: "Albania", code: "AL", phoneCode: "+355" },

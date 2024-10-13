@@ -1,6 +1,6 @@
 {
   "name": "akar",
-  "version": "1.0.0-beta.1",
+  "version": "0.1.0-beta",
   "description": "Akar is a simple and lightweight JavaScript library for building user interfaces.",
   "type": "module",
   "scripts": {
@@ -72,7 +72,10 @@
   "tsup": {
     "dts": true,
     "target": "es2018",
-    "format": ["esm", "cjs"],
+    "format": [
+      "esm",
+      "cjs"
+    ],
     "splitting": false,
     "sourceMap": true,
     "minify": false,

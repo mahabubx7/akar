@@ -1,36 +1,55 @@
+/**
+ * Akar.js
+ * (c) 2024, @mahabubx7
+ * @since 0.1.0-beta
+ * @license MIT
+ */
+
 import { AkarBase } from "./base"
 
-export class AkarObject<T extends object> extends AkarBase<T> {
-  constructor(private shape: { [K in keyof T]: AkarBase<T[K]> }) {
+export class AkarObject<T extends Record<string, any>> extends AkarBase<T> {
+  constructor(
+    private shape: { [K in keyof T]: AkarBase<T[K]> },
+    private defaults: Partial<T> = {}
+  ) {
     super()
   }
 
   parse(input: any): {
-    data?: T
+    value?: T
     errors?: { field: string; reason: string; value?: any }[]
   } {
     const errors: { field: string; reason: string; value?: any }[] = []
-    const result: any = {}
+    const result: Partial<T> = {}
 
-    if (typeof input !== "object" || input === null) {
+    if (typeof input !== "object" || input === null || Array.isArray(input)) {
       errors.push({
-        field: "",
+        field: "object",
         reason: "Invalid type, expected object",
         value: input
       })
-    } else {
-      for (const key in this.shape) {
-        const parsed = this.shape[key].parse(input[key])
-        if (parsed.errors) {
-          parsed.errors.forEach((error) =>
-            errors.push({ field: key, reason: error.reason, value: input[key] })
-          )
-        } else {
-          result[key] = parsed.value
-        }
+      return { errors }
+    }
+
+    for (const key in this.shape) {
+      const schema = this.shape[key]
+      const parsed = schema.parse(
+        input[key] !== undefined ? input[key] : this.defaults[key]
+      )
+
+      if (parsed.errors) {
+        parsed.errors.forEach((error) => {
+          errors.push({
+            field: key,
+            reason: error.reason,
+            value: error.value
+          })
+        })
+      } else {
+        result[key] = parsed.value!
       }
     }
 
-    return errors.length > 0 ? { errors } : { data: result }
+    return errors.length > 0 ? { errors } : { value: result as T }
   }
 }

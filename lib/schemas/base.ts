@@ -1,3 +1,10 @@
+/**
+ * Akar.js
+ * (c) 2024, @mahabubx7
+ * @since 0.1.0-beta
+ * @license MIT
+ */
+
 export abstract class AkarBase<T> {
   abstract parse(input: any): {
     value?: T
@@ -18,7 +25,10 @@ export class AkarOptionalSchema<T> extends AkarBase<T | undefined> {
     value?: T | undefined
     errors?: { field: string; reason: string; value?: any }[]
   } {
+    // If input is undefined, return undefined
     if (input === undefined) return { value: undefined }
+
+    // Otherwise, parse the value using the base schema
     return this.schema.parse(input)
   }
 }
