@@ -24,7 +24,7 @@ export const a = {
   array: <T>(schema: AkarBase<T>) => new AkarArray<T>(schema)
 }
 
-export type * from "./helpers/infer"
+// export type * from "./helpers/infer"
 export type * from "./types"
 
 // default export
