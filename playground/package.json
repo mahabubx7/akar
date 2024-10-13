@@ -8,5 +8,8 @@
   "devDependencies": {
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "type-fest": "^4.26.1"
   }
 }

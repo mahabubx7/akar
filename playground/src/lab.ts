@@ -1,20 +1,17 @@
-import a from "akar"
+import { a, InferSchema, InferSchemaWithConditions } from "akar"
 
-const user = a.object({
-  name: a.string().min(3),
-  age: a.number().port().optional()
+const userSchema = a.object({
+  name: a.string(),
+  age: a.number().min(18).optional()
 })
 
-// type User = InferType<typeof user>
+console.log(userSchema.parse({ name: "John", age: 0 }))
 
-// const user1: User = {
-//   name: "John Doe",
-//   age: 25
-// }
+type UserType = InferSchema<typeof userSchema>
+type User = InferSchemaWithConditions<typeof userSchema>
 
-const result = user.parse({
-  name: "John Doe",
-  age: 25
-})
+const test1: User = { name: "John" } // OK
+const test2: UserType = { name: "John", age: undefined } // OK
 
-console.log(result, "\n") // parsed values
+console.log(test1, typeof test1)
+console.log(test2, typeof test2)
