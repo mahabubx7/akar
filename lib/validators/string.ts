@@ -1,7 +1,8 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * String validators
+ * @since 1.0.0-beta
  * @license MIT
  */
 
@@ -15,7 +16,7 @@ import {
 
 // String: check the type
 export const isString = (input: unknown): input is string =>
-  typeof input === "string" && input.length > 0
+  typeof input === "string"
 
 // Empty: check if the string is empty
 export const isEmpty = (input: string): boolean => input.length === 0
@@ -35,6 +36,10 @@ export const maxLength = (input: string, max: number): boolean =>
 // Range: check if the string length is within the range
 export const range = (input: string, min: number, max: number): boolean =>
   input.length >= min && input.length <= max
+
+// Pattern: check if the string matches the specified pattern
+export const pattern = (input: string, pattern: string | RegExp): boolean =>
+  new RegExp(pattern).test(input)
 
 // Alphanumeric: check if the string contains only alphanumeric characters
 export const isAlphanumeric = (input: string): boolean =>
@@ -99,7 +104,9 @@ export const isISSN = (input: string): boolean =>
 
 // Credit Card: check if the string is a valid credit card number
 export const isCreditCard = (input: string): boolean =>
-  /^\d{13,16}$/.test(input)
+  /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/.test(
+    input
+  )
 
 // Phone: check if the string is a valid phone number
 export const isPhone = (
@@ -115,7 +122,7 @@ export const isPhone = (
   if (options.phoneCode) {
     // Check if the phone code is valid
     options.phoneCode.forEach((code) => {
-      if (input.startsWith(code)) flag = true
+      if (input.startsWith(code) || input.startsWith(code.slice(1))) flag = true
     })
 
     return flag
@@ -130,7 +137,7 @@ export const isPhone = (
       throw new Error("Invalid phone code!")
 
     phCodes.forEach((code) => {
-      if (input.startsWith(code)) flag = true
+      if (input.startsWith(code) || input.startsWith(code.slice(1))) flag = true
     })
 
     if (!flag) throw new Error("Invalid phone-number format!")
@@ -148,7 +155,7 @@ export const isPhone = (
       throw new Error("Invalid phone code!")
 
     phCodes.forEach((code) => {
-      if (input.startsWith(code)) flag = true
+      if (input.startsWith(code) || input.startsWith(code.slice(1))) flag = true
     })
 
     if (!flag) throw new Error("Invalid phone-number format!")
@@ -173,7 +180,7 @@ export const isPostalCode = (input: string): boolean =>
 
 // Passport: check if the string is a valid passport number
 export const isPassport = (input: string): boolean =>
-  /^[a-z0-9\s-]+$/i.test(input)
+  /^[A-Z]{2}[a-zA-Z0-9]{3,18}$/.test(input)
 
 // Currency: check if the string is a valid currency code
 export const isCurrency = (input: string): boolean => /^[a-z]{3}$/i.test(input)
@@ -276,6 +283,15 @@ export const isOTP = (
 export const isBase64 = (input: string): boolean =>
   /^[a-z0-9+/]+={0,2}$/i.test(input)
 
+// DataURI: check if the string is a valid data URI
+export const isDataURI = (input: string): boolean =>
+  /^data:[a-z0-9-]+\/[a-z0-9-]+;base64,[a-z0-9+/]+=*$/i.test(input)
+
+// MIME: check if the string is a valid MIME type
+export const isMIME = (input: string): boolean =>
+  /^[a-z0-9-]+\/[a-z0-9-]+(;\s?charset=[a-z0-9-]+)?$/i.test(input) &&
+  !input.endsWith(";")
+
 // JSON: check if the string is a valid JSON
 export const isJSON = (input: string): boolean => {
   try {
@@ -289,7 +305,8 @@ export const isJSON = (input: string): boolean => {
 // JWT: check if the string is a valid JWT
 export const isJWT = (input: string): boolean => {
   const parts = input.split(".")
-  return parts.length === 3 && isBase64(parts[0])
+  const jwtRegex = /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/
+  return parts.length === 3 && jwtRegex.test(input)
 }
 
 // MD5: check if the string is a valid MD5 hash
@@ -306,7 +323,7 @@ export const isSHA512 = (input: string): boolean =>
   /^[a-f0-9]{128}$/.test(input)
 
 // ASCII: check if the string contains only ASCII characters
-export const isASCII = (input: string): boolean => /^[\x00-\x7F]+$/.test(input)
+// export const isASCII = (input: string): boolean => /^[\x00-\x7F]+$/.test(input)
 
 // Multibyte: check if the string contains multibyte characters
 export const isMultibyte = (input: string): boolean =>
@@ -325,7 +342,8 @@ export const isVariable = (input: string): boolean =>
   /^[a-z_][a-z0-9_]*$/i.test(input)
 
 // Slug: check if the string is a valid slug
-export const isSlug = (input: string): boolean => /^[a-z0-9-]+$/i.test(input)
+export const isSlug = (input: string): boolean =>
+  /^[a-z0-9]{2,}(?:-[a-z0-9]{1,})*$/i.test(input)
 
 // Semver: check if the string is a valid semantic version
 export const isSemver = (input: string): boolean =>
@@ -351,10 +369,7 @@ export const isDate = (input: string): boolean => !isNaN(Date.parse(input))
 
 // Time: check if the string is a valid time
 export const isTime = (input: string): boolean =>
-  /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(input)
-
-// Date-Time: check if the string is a valid date-time
-export const isDateTime = (input: string): boolean => !isNaN(Date.parse(input))
+  /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/.test(input)
 
 // UTC: check if the string is a valid UTC date-time
 export const isUTC = (input: string): boolean =>
@@ -386,10 +401,6 @@ export const isWeekday = (input: string): boolean =>
 // Base: check if the string is a valid base
 export const isBase = (input: string, base: number): boolean =>
   new RegExp(`^[0-${base - 1}]+$`).test(input)
-
-// Custom: check if the string matches the custom pattern
-export const isCustom = (input: string, pattern: string): boolean =>
-  new RegExp(pattern).test(input)
 
 // Match: check if the string matches the specified string
 export const isMatch = (input: string, target: string): boolean =>

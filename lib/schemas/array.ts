@@ -1,10 +1,12 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Array schema
+ * @since 1.0.0-beta
  * @license MIT
  */
 
+import { isArray } from "../validators/array"
 import { AkarBase } from "./base"
 
 export class AkarArray<T> extends AkarBase<T[]> {
@@ -18,7 +20,7 @@ export class AkarArray<T> extends AkarBase<T[]> {
   } {
     const errors: { field: string; reason: string; value?: any }[] = []
 
-    if (!Array.isArray(input)) {
+    if (!isArray(input)) {
       errors.push({
         field: "array",
         reason: "Invalid type, expected array",

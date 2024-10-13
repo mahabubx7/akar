@@ -1,10 +1,12 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Enum schema
+ * @since 1.0.0-beta
  * @license MIT
  */
 
+import { isString } from "../validators/string"
 import { AkarBase } from "./base"
 
 export class AkarEnum<T extends readonly string[]> extends AkarBase<T[number]> {
@@ -25,7 +27,7 @@ export class AkarEnum<T extends readonly string[]> extends AkarBase<T[number]> {
       return { value: this.defaultValue }
     }
 
-    if (typeof input !== "string") {
+    if (!isString(input)) {
       return {
         errors: [
           {

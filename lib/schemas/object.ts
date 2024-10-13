@@ -1,10 +1,13 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Object schema
+ * @since 1.0.0-beta
  * @license MIT
  */
 
+import { isArray } from "../validators/array"
+import { isObject } from "../validators/object"
 import { AkarBase } from "./base"
 
 export class AkarObject<T extends Record<string, any>> extends AkarBase<T> {
@@ -22,7 +25,7 @@ export class AkarObject<T extends Record<string, any>> extends AkarBase<T> {
     const errors: { field: string; reason: string; value?: any }[] = []
     const result: Partial<T> = {}
 
-    if (typeof input !== "object" || input === null || Array.isArray(input)) {
+    if (!isObject(input) || input === null || isArray(input)) {
       errors.push({
         field: "object",
         reason: "Invalid type, expected object",

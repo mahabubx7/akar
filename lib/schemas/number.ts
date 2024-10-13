@@ -1,10 +1,12 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Number schema
+ * @since 1.0.0-beta
  * @license MIT
  */
 
+import { isNumber } from "../validators/number"
 import { AkarBase } from "./base"
 
 export class AkarNumber extends AkarBase<number> {
@@ -27,7 +29,7 @@ export class AkarNumber extends AkarBase<number> {
   } {
     const errors: { field: string; reason: string; value?: any }[] = []
 
-    if (typeof input !== "number") {
+    if (!isNumber(input)) {
       errors.push({
         field: "number",
         reason: "Invalid type, expected number",

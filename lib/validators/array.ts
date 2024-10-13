@@ -1,7 +1,8 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Array validators
+ * @since 1.0.0-beta
  * @license MIT
  */
 

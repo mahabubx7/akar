@@ -1,7 +1,8 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Object validators
+ * @since 1.0.0-beta
  * @license MIT
  */
 
@@ -20,8 +21,12 @@ export const isNotEmpty = (input: Record<string, unknown>): boolean =>
 // JSON: check if the value is a valid JSON object
 export const isJSON = (input: unknown): boolean => {
   if (typeof input === "string") {
-    JSON.parse(input)
-    return true
+    try {
+      JSON.parse(input)
+      return true
+    } catch (_e) {
+      return false
+    }
   }
   return false
 }

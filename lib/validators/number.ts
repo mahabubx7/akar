@@ -1,7 +1,8 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Number validators
+ * @since 1.0.0-beta
  * @license MIT
  */
 
@@ -73,22 +74,4 @@ export const isPerfect = (input: number): boolean => {
     if (input % i === 0) sum += i
   }
   return sum === input
-}
-
-// Abundant: check if the number is an abundant number
-export const isAbundant = (input: number): boolean => {
-  let sum = 0
-  for (let i = 1; i < input; i++) {
-    if (input % i === 0) sum += i
-  }
-  return sum > input
-}
-
-// Deficient: check if the number is a deficient number
-export const isDeficient = (input: number): boolean => {
-  let sum = 0
-  for (let i = 1; i < input; i++) {
-    if (input % i === 0) sum += i
-  }
-  return sum < input
 }

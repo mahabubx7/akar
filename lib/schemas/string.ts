@@ -1,10 +1,12 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * String schema
+ * @since 1.0.0-beta
  * @license MIT
  */
 
+import { isString } from "../validators/string"
 import { AkarBase } from "./base"
 
 export class AkarString extends AkarBase<string> {
@@ -27,7 +29,7 @@ export class AkarString extends AkarBase<string> {
   } {
     const errors: { field: string; reason: string; value?: any }[] = []
 
-    if (typeof input !== "string") {
+    if (!isString(input)) {
       errors.push({
         field: "string",
         reason: "Invalid type, expected string",

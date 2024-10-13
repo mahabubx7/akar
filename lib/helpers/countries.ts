@@ -1,7 +1,8 @@
 /**
  * Akar.js
  * (c) 2024, @mahabubx7
- * @since 0.1.0-beta
+ * Country list with code and phone code
+ * @since 1.0.0-beta
  * @license MIT
  */
 
