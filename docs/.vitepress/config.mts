@@ -23,7 +23,7 @@ export default defineConfig({
 
     nav: [
       { text: "Guide", link: "/guide" },
-      { text: "Docs", link: "/api" },
+      { text: "Reference", link: "/api" },
       { text: "Our Team", link: "/team" }
 
       // sponser

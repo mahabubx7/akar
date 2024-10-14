@@ -13,17 +13,17 @@ hero:
       text: Get Started
       link: /greetings.md
     - theme: alt
-      text: Documentation
+      text: API References
       link: /api/index.md
 
 features:
-  - icon: 🛠️
+  - icon: 🔨
     title: Type-safety first approach
     details: Ensure your data validation is type-safe, reducing runtime errors and improving code reliability.
-  - icon: 🛠️
+  - icon: ⏹️
     title: Smooth error handlers
     details: Handle validation errors gracefully with built-in error handling mechanisms.
-  - icon: 🛠️
+  - icon: 🔎
     title: Rich type inferer
     details: Leverage advanced type inference to infer the type directly from your defined schema.
 ---
