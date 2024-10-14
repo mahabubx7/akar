@@ -6,16 +6,70 @@
  * @license MIT
  */
 
+import { objectChecker } from "../validators"
 import { isArray } from "../validators/array"
 import { isObject } from "../validators/object"
 import { AkarBase } from "./base"
 
 export class AkarObject<T extends Record<string, any>> extends AkarBase<T> {
+  private shape: { [K in keyof T]: AkarBase<T[K]> }
+  private defaults: Partial<T>
+  private hasOwnKeys: string[] | null = null
+  private hasOwnValues: unknown[] | null = null
+  private isJson: boolean = false
+  private compare: T | null = null
+  private isEqual: boolean = false
+  private isDeepEqual: boolean = false
+  private isShallowEqual: boolean = false
+
   constructor(
-    private shape: { [K in keyof T]: AkarBase<T[K]> },
-    private defaults: Partial<T> = {}
+    shape: { [K in keyof T]: AkarBase<T[K]> },
+    defaults: Partial<T> = {}
   ) {
     super()
+    this.shape = shape
+    this.defaults = defaults
+  }
+
+  hasKeys(keys: string[]): this {
+    if (!this.hasOwnKeys) {
+      this.hasOwnKeys = keys
+      return this
+    }
+    this.hasOwnKeys = [...this.hasOwnKeys!, ...keys]
+    return this
+  }
+
+  hasValues(values: unknown[]): this {
+    if (!this.hasOwnValues) {
+      this.hasOwnValues = values
+      return this
+    }
+    this.hasOwnValues = [...this.hasOwnValues!, ...values]
+    return this
+  }
+
+  equalTo(compare: T): this {
+    this.isEqual = true
+    this.compare = compare
+    return this
+  }
+
+  deepEqualTo(compare: T): this {
+    this.isDeepEqual = true
+    this.compare = compare
+    return this
+  }
+
+  shallowEqualTo(compare: T): this {
+    this.isShallowEqual = true
+    this.compare = compare
+    return this
+  }
+
+  jsonObject(): this {
+    this.isJson = true
+    return this
   }
 
   parse(input: any): {
@@ -31,7 +85,45 @@ export class AkarObject<T extends Record<string, any>> extends AkarBase<T> {
         reason: "Invalid type, expected object",
         value: input
       })
+
       return { errors }
+    }
+
+    // json-object
+    if (this.isJson && !objectChecker.isJSON(JSON.stringify(input))) {
+      errors.push({
+        field: "object",
+        reason: "Invalid JSON object",
+        value: input
+      })
+    }
+
+    // comapares
+    if (this.isEqual && !objectChecker.isEqual(input, this.compare!)) {
+      errors.push({
+        field: "object",
+        reason: `Object must be equal to ${JSON.stringify(this.compare)}`,
+        value: input
+      })
+    }
+
+    if (this.isDeepEqual && !objectChecker.isDeepEqual(input, this.compare!)) {
+      errors.push({
+        field: "object",
+        reason: `Object must be deeply equal to ${JSON.stringify(this.compare)}`,
+        value: input
+      })
+    }
+
+    if (
+      this.isShallowEqual &&
+      !objectChecker.isShallowEqual(input, this.compare!)
+    ) {
+      errors.push({
+        field: "object",
+        reason: `Object must be shallowly equal to ${JSON.stringify(this.compare)}`,
+        value: input
+      })
     }
 
     for (const key in this.shape) {

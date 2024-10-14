@@ -57,4 +57,17 @@ describe("Test schema: Object", () => {
       "String is too long. Maximum length is 10"
     )
   })
+
+  test("should return error when value is an object with invalid field", () => {
+    const string = new AkarString()
+    const schema = object({
+      name: string.min(1).max(10)
+    }).jsonObject()
+
+    expect(schema.parse({ name: "" }).errors).toBeDefined()
+    expect(schema.parse({ name: "" }).errors?.length).toBeGreaterThanOrEqual(1)
+    expect(schema.parse({ name: "" }).errors![0].reason).toContain(
+      "String is too short. Minimum length is 1"
+    )
+  })
 })

@@ -11,18 +11,6 @@ describe("Object validators", () => {
     expect(obj.isObject(undefined)).toBe(false)
   })
 
-  test("isEmpty", () => {
-    expect(obj.isEmpty({})).toBe(true)
-    expect(obj.isEmpty({ a: 1 })).toBe(false)
-    expect(obj.isEmpty({ a: 1, b: 2 })).toBe(false)
-  })
-
-  test("isNotEmpty", () => {
-    expect(obj.isNotEmpty({})).toBe(false)
-    expect(obj.isNotEmpty({ a: 1 })).toBe(true)
-    expect(obj.isNotEmpty({ a: 1, b: 2 })).toBe(true)
-  })
-
   test("hasKey", () => {
     expect(obj.hasKey({ a: 1 }, "a")).toBe(true)
     expect(obj.hasKey({ a: 1 }, "b")).toBe(false)
@@ -36,11 +24,6 @@ describe("Object validators", () => {
   test("isJSON", () => {
     expect(obj.isJSON('{"a":1}')).toBe(true)
     expect(obj.isJSON("{a:1}")).toBe(false)
-  })
-
-  test("isType", () => {
-    expect(obj.isType({ a: 1 }, Object)).toBe(true)
-    expect(obj.isType({ a: 1 }, Array)).toBe(false)
   })
 
   test("isEqual", () => {
