@@ -9,14 +9,22 @@ export default defineConfig({
   sitemap: {
     hostname: "https://mahabubx7.github.io/akarjs/"
   },
+  lastUpdated: true,
   head: [["link", { rel: "icon", href: "/akarjs/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: "local"
+    },
+    editLink: {
+      pattern: "https://github.com/mahabubx7/akarjs/edit/main/docs/:path",
+      text: "Edit this page on GitHub"
+    },
 
     nav: [
       { text: "Guide", link: "/guide" },
       { text: "Docs", link: "/api" },
-      { text: "About Us", link: "/team" }
+      { text: "Our Team", link: "/team" }
 
       // sponser
       // npm-pkg-link
