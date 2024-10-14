@@ -14,10 +14,11 @@ export const isNumber = (input: unknown): input is number =>
 export const isInteger = (input: number): boolean => Number.isInteger(input)
 
 // Float: check if the number is a float
-export const isFloat = (input: number): boolean => !Number.isInteger(input)
+export const isFloat = (input: number): boolean =>
+  /^\d+\.\d+$/.test(input.toString())
 
 // Binary: check if the number is a binary number
-export const isBinary = (input: number): boolean =>
+export const isBinary = (input: number | string): boolean =>
   /^[01]+$/.test(input.toString())
 
 // Octal: check if the number is an octal number

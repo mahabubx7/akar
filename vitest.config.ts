@@ -5,7 +5,19 @@ export default defineConfig({
     globals: true,
     environment: "node",
     coverage: {
-      reporter: ["text", "json", "html"]
+      reporter: ["text", "json", "html"],
+      provider: "v8",
+      reportsDirectory: "coverage",
+      all: true,
+      exclude: [
+        "node_modules",
+        "test",
+        "coverage",
+        "dist",
+        ".git",
+        "**/*/index.ts"
+      ],
+      include: ["lib"]
     }
   }
 })

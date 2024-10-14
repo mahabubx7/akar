@@ -19,6 +19,14 @@ describe("Number validators", () => {
     expect(number.isInteger(NaN)).toBe(false)
   })
 
+  test("isFloat", () => {
+    expect(number.isFloat(1)).toBe(false)
+    expect(number.isFloat(1.1)).toBe(true)
+    expect(number.isFloat(1.0)).toBe(false)
+    expect(number.isFloat(1.1)).toBe(true)
+    expect(number.isFloat(NaN)).toBe(false)
+  })
+
   test("isPositive", () => {
     expect(number.isPositive(1)).toBe(true)
     expect(number.isPositive(1.1)).toBe(true)
