@@ -74,6 +74,26 @@ export const isIP = (input: string): boolean =>
     input
   )
 
+// ISISN: check if the string is a valid ISIN
+export const isISIN = (input: string): boolean =>
+  /^[A-Z]{2}[A-Z0-9]{9}\d$/.test(input)
+
+// isLocale: check if the string is a valid locale
+export const isLocale = (input: string): boolean =>
+  /^[a-z]{2}(-[A-Z]{2})?$/.test(input)
+
+// Lat/Lng: check if the string is a valid latitude/longitude
+export const isLatLng = (input: string): boolean =>
+  /^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$/.test(input)
+
+// Semver: check if the string is a valid semantic version
+export const isSemVer = (input: string): boolean =>
+  /^\d+\.\d+\.\d+(-[a-z0-9-]+(\.[a-z0-9-]+)*)?$/i.test(input)
+
+// IPv6: check if the string is a valid IPv6 address
+export const isIPv6 = (input: string): boolean =>
+  /^([0-9a-f]{1,4}:){7}([0-9a-f]{1,4})$/.test(input)
+
 // MAC: check if the string is a valid MAC address
 export const isMAC = (input: string): boolean =>
   /^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$/.test(input)
@@ -341,6 +361,10 @@ export const isHalfwidth = (input: string): boolean =>
 export const isVariable = (input: string): boolean =>
   /^[a-z_][a-z0-9_]*$/i.test(input)
 
+// FQDN: check if the string is a valid FQDN
+export const isFQDN = (input: string): boolean =>
+  /^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/i.test(input)
+
 // Slug: check if the string is a valid slug
 export const isSlug = (input: string): boolean =>
   /^[a-z0-9]{2,}(?:-[a-z0-9]{1,})*$/i.test(input)
@@ -349,23 +373,20 @@ export const isSlug = (input: string): boolean =>
 export const isSemver = (input: string): boolean =>
   /^\d+\.\d+\.\d+(-[a-z0-9-]+(\.[a-z0-9-]+)*)?$/i.test(input)
 
-// Base32: check if the string is a valid base32
-export const isBase32 = (input: string): boolean => /^[A-Z2-7]+=*$/i.test(input)
-
-// Base58: check if the string is a valid base58
-export const isBase58 = (input: string): boolean =>
-  /^[1-9A-HJ-NP-Za-km-z]+$/i.test(input)
-
-// Base62: check if the string is a valid base62
-export const isBase62 = (input: string): boolean =>
-  /^[0-9A-Za-z]+$/i.test(input)
-
 // Base64URL: check if the string is a valid base64 URL
 export const isBase64URL = (input: string): boolean =>
   /^[a-zA-Z0-9_-]+$/i.test(input)
 
+// Magnet: check if the string is a valid magnet URI
+export const isMagnet = (input: string): boolean =>
+  /^magnet:\?xt=urn:[a-z0-9]+:[a-z0-9]{32,40}&dn=.+&tr=.+$/i.test(input)
+
 // Date: check if the string is a valid date
 export const isDate = (input: string): boolean => !isNaN(Date.parse(input))
+
+// Timezone: check if the string is a valid timezone
+export const isTimezone = (input: string): boolean =>
+  /^([a-z]+\/[a-z_]+)$/i.test(input)
 
 // Time: check if the string is a valid time
 export const isTime = (input: string): boolean =>
@@ -401,10 +422,6 @@ export const isWeekday = (input: string): boolean =>
 // Base: check if the string is a valid base
 export const isBase = (input: string, base: number): boolean =>
   new RegExp(`^[0-${base - 1}]+$`).test(input)
-
-// Match: check if the string matches the specified string
-export const isMatch = (input: string, target: string): boolean =>
-  input === target
 
 // Contains: check if the string contains the specified string
 export const contains = (input: string, target: string): boolean =>
