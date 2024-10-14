@@ -125,6 +125,13 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+.vscode/*
+!.vscode/settings.json
+
+# Husky hooks
+.husky/*
+!.husky/pre-commit
+!.husky/commit-msg
 
 # yarn v2
 .yarn/cache
