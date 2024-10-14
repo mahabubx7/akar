@@ -13,7 +13,10 @@
     "test:ui": "vitest --ui",
     "build": "tsup",
     "prepublishOnly": "npm run build",
-    "prebuild": "rimraf dist"
+    "prebuild": "rimraf dist",
+    "docs:dev": "cd docs && npm run docs:dev",
+    "docs:build": "cd docs && npm run docs:build",
+    "docs:preview": "cd docs && npm run docs:preview"
   },
   "files": [
     "dist",
