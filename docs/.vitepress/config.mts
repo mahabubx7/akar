@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Akar.js",
-  description: "Lightweight data validation library",
+  description: "Simple & lightweight data validation library",
   base: "/akarjs/",
   // lang: "en",
   sitemap: {
@@ -26,22 +26,54 @@ export default defineConfig({
       message:
         'Released under the <a href="https://github.com/mahabubx7/akarjs/blob/main/LICENSE">MIT License</a>.',
       copyright:
-        'Copyright © 2024-present <a href="https://github.com/mahabubx7">Mahabub</a>'
+        'Copyright © 2024-present <a href="https://github.com/mahabubx7">@mahabubx7</a>'
     },
 
     logo: "/akar-js-logo.png",
 
     sidebar: [
       {
+        text: "Greetings",
+        link: "/greetings"
+      },
+      {
         text: "Guides",
+        link: "/",
+        base: "/guide",
         items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" }
+          { text: "Get Started", link: "/get-started" },
+          { text: "Define Schema", link: "/schema" },
+          { text: "Data Validation", link: "/validation" }
         ]
       },
       {
-        text: "API",
-        items: [{ text: "API Reference", link: "/api" }]
+        text: "API References",
+        link: "/",
+        base: "/api",
+        items: [
+          {
+            text: "Object",
+            link: "/object"
+          },
+          {
+            text: "Array",
+            link: "/array"
+          },
+          {
+            text: "Number",
+            link: "/number"
+          },
+          {
+            text: "String",
+            link: "/string"
+          },
+          { text: "Enum", link: "/enum" },
+
+          {
+            text: "Boolean",
+            link: "/boolean"
+          }
+        ]
       }
     ],
 
