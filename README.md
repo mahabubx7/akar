@@ -1,4 +1,6 @@
-# Akar.js
+<div align="center">
+  <img src="./docs/public/akar-js.png" alt="akar-js" width="360" />
+</div>
 
 **version**: 1.0.0-beta
 
