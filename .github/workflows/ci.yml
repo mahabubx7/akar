@@ -36,17 +36,29 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Generate coverage badge
-        run: npx covgen badge
-
-      - name: Update README with coverage badge
         run: |
-          COVERAGE_BADGE=$(cat coverage/badge.svg)
-          sed -i 's|<img src=".*" alt="Coverage Badge"/>|'"$COVERAGE_BADGE"'|' README.md
+          npx covgen badge
+          ls -R coverage  # Check contents of the coverage folder
 
       - name: Generate test result badge
         run: node scripts/generate-badges.cjs
 
-      - name: Update README with test result badge
+      - name: Update README with coverage badge
         run: |
-          TEST_BADGE=$(cat test-result/badge.svg)
-          sed -i 's|<img src=".*" alt="Test Result Badge"/>|'"$TEST_BADGE"'|' README.md
+          if [ -f coverage/badge.svg ]; then
+            COVERAGE_BADGE=$(cat coverage/badge.svg)
+            sed -i 's|<img src=".*" alt="Coverage Badge"/>|'"$COVERAGE_BADGE"'|' README.md
+          else
+            echo "Coverage badge not found"
+          fi
+
+      - name: Update README with coverage badge
+        run: |
+          if [ -f coverage/badge.svg ]; then
+            # Replace the badge placeholder in README.md with actual badge content
+            COVERAGE_BADGE=$(cat coverage/badge.svg)
+            # Use '#' as delimiter and insert the badge safely into README.md
+            sed -i 's#<img src=".*" alt="Coverage Badge"/>#'"$COVERAGE_BADGE"'#' README.md
+          else
+            echo "Coverage badge not found"
+          fi
