@@ -52,11 +52,13 @@ jobs:
             echo "Coverage badge not found"
           fi
 
-      - name: Update README with test result badge
+      - name: Update README with coverage badge
         run: |
-          if [ -f test-result/badge.svg ]; then
-            TEST_BADGE=$(cat test-result/badge.svg)
-            sed -i 's|<img src=".*" alt="Test Result Badge"/>|'"$TEST_BADGE"'|' README.md
+          if [ -f coverage/badge.svg ]; then
+            # Replace the badge placeholder in README.md with actual badge content
+            COVERAGE_BADGE=$(cat coverage/badge.svg)
+            # Use '#' as delimiter and insert the badge safely into README.md
+            sed -i 's#<img src=".*" alt="Coverage Badge"/>#'"$COVERAGE_BADGE"'#' README.md
           else
-            echo "Test result badge not found"
+            echo "Coverage badge not found"
           fi
