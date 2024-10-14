@@ -47,6 +47,9 @@
     "validation",
     "typescript"
   ],
+  "contributors": [
+    "Mahabub <mahabubx7@gmail.com>, akar.js"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
