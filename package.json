@@ -46,6 +46,7 @@
     "tsup": "^8.3.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.8.1",
+    "vitepress": "^1.4.1",
     "vitest": "^2.1.2"
   },
   "homepage": "https://mahabubx7.github.io/akarjs",
