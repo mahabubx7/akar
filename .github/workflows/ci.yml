@@ -28,7 +28,7 @@ jobs:
         run: npm run test
 
       - name: Run test coverage
-        run: npm run coverage
+        run: npm run test:cov
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
@@ -44,7 +44,7 @@ jobs:
           sed -i 's|<img src=".*" alt="Coverage Badge"/>|'"$COVERAGE_BADGE"'|' README.md
 
       - name: Generate test result badge
-        run: npx vitest-badge-gen
+        run: node scripts/generate-badges.cjs
 
       - name: Update README with test result badge
         run: |
