@@ -2,9 +2,21 @@
   <img src="./docs/public/akar-js.png" alt="akar-js" width="360" />
 </div>
 
-**version**: 1.0.0-beta
+<div align="center">
+  <img src="https://img.shields.io/badge/TEST-PASSES-12A513?labelColor=107A77&style=flat&logo=vitest&logoColor=FFF" alt="TEST" />
+  <a href="https://badge.fury.io/js/akarjs"><img src="https://badge.fury.io/js/akarjs.svg" alt="npm version" height="18"></a>
+  <a href="https://hits.dwyl.com/mahabubx7/akar"><img src="https://hits.dwyl.com/mahabubx7/akar.svg" alt="hits" /></a>
+  <br />
+  <a href="https://www.npmjs.com/package/akarjs" target="_blank">
+    <img src="https://nodei.co/npm/akarjs.png?downloads=true&downloadRank=true&stars=true" alt="npm-link" />
+  </a>
+</div>
 
-> Docs are available now!
+<br />
+<br />
+
+
+> Docs are available now! But still working on it.
 
 ### Installation
 
