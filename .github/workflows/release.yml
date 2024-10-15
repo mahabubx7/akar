@@ -11,6 +11,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write # Explicitly set the permission to write contents
+
     steps:
       # 1. Checkout the repository
       - name: Checkout code
@@ -22,9 +25,14 @@ jobs:
         with:
           node-version: "20" # Specify your Node.js version
           registry-url: "https://registry.npmjs.org/"
+          # Use the NPM_TOKEN secret for authentication
           node-auth-token: ${{ secrets.NPM_TOKEN }}
           # If your package is scoped (e.g., @your-scope/package), uncomment the following line and set your scope
           # scope: '@your-scope'
+
+      # Debug npm configuration
+      - name: Print npm configuration
+        run: npm config list
 
       # 3. Install project dependencies
       - name: Install dependencies
