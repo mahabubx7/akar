@@ -3,6 +3,9 @@
   "version": "1.0.0-beta.1",
   "description": "Akar.js is a simple and lightweight schema based data-validation library.",
   "type": "module",
+  "main": "dist/lib/index.cjs",
+  "module": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
     "release": "release-it",
     "format": "prettier --write .",
@@ -20,7 +23,7 @@
     "docs:preview": "cd docs && npm run docs:preview"
   },
   "files": [
-    "dist",
+    "dist/lib",
     "package.json",
     "README.md",
     "CHANGELOG.md",
@@ -71,9 +74,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/esm/lib/index.js",
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js"
+      "import": "./dist/lib/index.js",
+      "types": "./dist/lib/index.d.ts",
+      "require": "./dist/lib/index.cjs"
     }
   },
   "tsup": {
@@ -84,9 +87,8 @@
       "cjs"
     ],
     "splitting": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "minify": false,
-    "legacyOutput": true,
     "clean": true,
     "keepNames": true,
     "outDir": "dist",

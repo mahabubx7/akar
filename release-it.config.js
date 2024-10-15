@@ -1,36 +1,3 @@
-///
-/*
-"release-it": {
-    "git": {
-      "tagName": "v${version}",
-      "commitMessage": "chore(release): v${version}",
-      "requireUpstream": true,
-      "requireCleanWorkingDir": true,
-      "tagAnotation": "v${version}",
-      "push": true
-    },
-    "github": {
-      "release": true,
-      "web": true
-    },
-    "npm": {
-      "publish": true,
-      "publishPath": "./",
-      "skipChecks": false
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular",
-        "infile": "CHANGELOG.md",
-        "whatBump": {
-          "level": 2,
-          "reason": "0 breaking changes, 0 features"
-        }
-      }
-    }
-  },
-*/
-///
 module.exports = {
   git: {
     tagName: "v${version}",
