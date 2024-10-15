@@ -2,6 +2,8 @@
 
 Thank you for considering contributing to this project! Here’s a quick guide to help you get started.
 
+> Please follow this guidelines for contribution through PR only. You need to find issues or collabrate on open/unresolved issues. Check this out: [issues](https://github.com/mahabubx7/akar/issues)
+
 ## Getting Started
 
 1. **Fork the Repository**:
@@ -11,8 +13,8 @@ Thank you for considering contributing to this project! Here’s a quick guide t
 2. **Clone the Repository**:
    - Clone the repository to your local machine:
      ```bash
-     git clone https://github.com/mahabubx7/akarjs.git
-     cd your-project-name
+     git clone https://github.com/mahabubx7/akar.git
+     cd akar
      ```
 
 3. **Create a New Branch**:
@@ -30,7 +32,7 @@ Thank you for considering contributing to this project! Here’s a quick guide t
 5. **Run Tests**:
    - Make sure your changes don't break anything by running the tests:
      ```bash
-     npm run test
+     npm test
      ```
 
 ## Guidelines
@@ -53,3 +55,7 @@ Make sure to keep commits **atomic** (small, focused, and purposeful).
    git fetch origin
    git checkout main
    git merge origin/main
+
+2. Keep paitent and wait for the review. After the review, if the maintainers required changes then please do it asap.
+
+_Your PR will be merged after approval only._
