@@ -16,6 +16,7 @@ const members = [
     title: 'Creator',
     links: [
       { icon: 'github', link: 'https://github.com/mahabubx7' },
+      // { icon: '', link: ''},
       { icon: 'linkedin', link: 'https://linkedin.com/in/mahabubx7' }
     ]
   },
@@ -28,10 +29,10 @@ const members = [
     <template #title>
       Our Team
     </template>
-    <template #lead>
+    <!-- <template #lead>
       The development of VitePress is guided by an international
       team, some of whom have chosen to be featured below.
-    </template>
+    </template> -->
   </VPTeamPageTitle>
   <VPTeamMembers
     :members="members"
