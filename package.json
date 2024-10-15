@@ -96,7 +96,12 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "angular"
+        "preset": "angular",
+        "infile": "CHANGELOG.md",
+        "whatBump": {
+          "level": 2,
+          "reason": "0 breaking changes, 0 features"
+        }
       }
     }
   },
