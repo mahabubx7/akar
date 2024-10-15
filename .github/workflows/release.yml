@@ -5,35 +5,39 @@ on:
     branches:
       - main
     tags:
-      - "v*.*.*"
+      - "v*.*.*" # Triggers on tags like v1.2.3
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # 2. Set up Node.js with authentication
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "20"
-          registry-url: "https://registry.npmjs.org"
+          node-version: "20" # Specify your Node.js version
+          registry-url: "https://registry.npmjs.org/"
+          node-auth-token: ${{ secrets.NPM_TOKEN }}
+          # If your package is scoped (e.g., @your-scope/package), uncomment the following line and set your scope
+          # scope: '@your-scope'
 
+      # 3. Install project dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Configure npm for authentication
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
+      # 4. Run release-it to handle the release process
       - name: Run release-it
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Default GitHub token
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx release-it
 
+      # 5. Update CHANGELOG.md and push changes
       - name: Update CHANGELOG.md
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -42,4 +46,4 @@ jobs:
           git commit -m 'Update CHANGELOG.md'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
