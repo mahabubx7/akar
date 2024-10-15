@@ -23,6 +23,7 @@
     "dist",
     "package.json",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "engines": {
@@ -70,8 +71,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/esm/lib/index.js",
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
     }
   },
   "release-it": {
@@ -87,8 +89,11 @@
       "release": true
     },
     "npm": {
-      "publish": true
+      "publish": true,
+      "publishPath": "./",
+      "skipChecks": false
     },
+    "ci": true,
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "angular"
