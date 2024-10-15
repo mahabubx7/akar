@@ -9,12 +9,16 @@ module.exports = {
   },
   github: {
     release: true,
-    web: true
+    web: true,
+    releaseName: "v${version}",
+    releaseNotes: "CHANGELOG.md"
   },
   npm: {
     publish: true,
     publishPath: "./",
-    skipChecks: false
+    skipChecks: false,
+    access: "public",
+    tag: "latest"
   },
   plugins: {
     "@release-it/conventional-changelog": {

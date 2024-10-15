@@ -1,6 +1,6 @@
 {
   "name": "akar",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.6",
   "description": "Akar.js is a simple and lightweight schema based data-validation library.",
   "type": "module",
   "main": "dist/index.cjs",
@@ -94,6 +94,16 @@
     "outDir": "dist",
     "entry": [
       "index.ts"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   },
   "lint-staged": {
