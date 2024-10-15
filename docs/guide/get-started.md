@@ -21,7 +21,7 @@ To install the npm package, follow these steps:
   <TabItem value="npm" label="npm">
 
 ```sh
-npm install akar
+npm install akarjs
 ```
 
   </TabItem>
@@ -29,7 +29,7 @@ npm install akar
   <TabItem value="yarn" label="yarn">
 
 ```sh
-yarn add akar
+yarn add akarjs
 ```
 
   </TabItem>
@@ -38,7 +38,7 @@ yarn add akar
 3. Verify the installation by checking the package version:
 
 ```sh
-npm list akar
+npm list akarjs
 ```
 
 ## Sample Usage
@@ -48,9 +48,9 @@ After installing the package, you can use it in your project as follows:
 1. Import the package in your JavaScript file:
 
 ```ts
-import Akar from "akar"
+import Akar from "akarjs"
 // or
-import { a } from "akar"
+import { a } from "akarjs"
 ```
 
 2. Use the package in your code:

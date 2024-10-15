@@ -17,16 +17,48 @@ We need to define schema for the validation process and each schema will contain
 
 ## Hello Schema
 
+::: info
+We are wotking on it.
+:::
+
 ## Array
+
+::: info
+We are wotking on it.
+:::
 
 ## Object
 
+::: info
+We are wotking on it.
+:::
+
 ## String
+
+::: info
+We are wotking on it.
+:::
 
 ## Number
 
+::: info
+We are wotking on it.
+:::
+
 ## Enum
+
+::: info
+We are wotking on it.
+:::
 
 ## Boolean
 
+::: info
+We are wotking on it.
+:::
+
 ## Conclusion
+
+::: info
+We are wotking on it.
+:::

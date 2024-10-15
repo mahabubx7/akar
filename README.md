@@ -11,25 +11,25 @@
 **npm**
 
 ```bash
-npm install akar
+npm install akarjs
 ```
 
 **yarn**
 
 ```bash
-yarn add akar
+yarn add akarjs
 ```
 
 **pnpm**
 
 ```bash
-pnpm add akar
+pnpm add akarjs
 ```
 
 **bun**
 
 ```bash
-bun add akar
+bun add akarjs
 ```
 
 ### Example usages
@@ -39,7 +39,7 @@ Here is an example of the use cases for this library.
 **User Schema**
 
 ```ts
-import { a, InferSchema, InferSchemaWithConditions } from "akar"
+import { a, InferSchema, InferSchemaWithConditions } from "akarjs"
 
 const userSchema = a.object({
   name: a.string().min(4),
