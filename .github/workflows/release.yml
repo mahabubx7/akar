@@ -33,7 +33,7 @@ jobs:
       # 4. Run release-it to handle the release process
       - name: Run release-it
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }} # Default GitHub token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Default GitHub token
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
 
@@ -46,4 +46,4 @@ jobs:
           git commit -m 'Update CHANGELOG.md'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
