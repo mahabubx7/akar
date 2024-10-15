@@ -74,9 +74,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/lib/index.js",
-      "types": "./dist/lib/index.d.ts",
-      "require": "./dist/lib/index.cjs"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs"
     }
   },
   "tsup": {
