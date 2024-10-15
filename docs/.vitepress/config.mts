@@ -26,8 +26,7 @@ export default defineConfig({
       { text: "Reference", link: "/api" },
       { text: "Our Team", link: "/team" }
 
-      // sponser
-      // npm-pkg-link
+      // sponsers place
     ],
 
     footer: {
@@ -86,6 +85,10 @@ export default defineConfig({
     ],
 
     socialLinks: [
+      {
+        icon: "npm",
+        link: "https://www.npmjs.com/package/akarjs"
+      },
       { icon: "github", link: "https://github.com/mahabubx7/akarjs" }
     ]
   }
