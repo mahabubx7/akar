@@ -80,7 +80,7 @@ type UserTypeWithConditionals = {
 */
 ```
 
-_For more, please visit our documentation website: [akar.js.org](https://mahabubx7.github.io/akarjs)_
+_For more, please visit our documentation website: [akar.js.org](https://mahabubx7.github.io/akar)_
 
 Thanks,
 

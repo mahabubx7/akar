@@ -4,20 +4,20 @@ import { defineConfig } from "vitepress"
 export default defineConfig({
   title: "Akar.js",
   description: "Simple & lightweight data validation library",
-  base: "/akarjs/",
+  base: "/akar/",
   // lang: "en",
   sitemap: {
-    hostname: "https://mahabubx7.github.io/akarjs/"
+    hostname: "https://mahabubx7.github.io/akar/"
   },
   lastUpdated: true,
-  head: [["link", { rel: "icon", href: "/akarjs/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/akar/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
       provider: "local"
     },
     editLink: {
-      pattern: "https://github.com/mahabubx7/akarjs/edit/main/docs/:path",
+      pattern: "https://github.com/mahabubx7/akar/edit/main/docs/:path",
       text: "Edit this page on GitHub"
     },
 
@@ -31,7 +31,7 @@ export default defineConfig({
 
     footer: {
       message:
-        'Released under the <a href="https://github.com/mahabubx7/akarjs/blob/main/LICENSE">MIT License</a>.',
+        'Released under the <a href="https://github.com/mahabubx7/akar/blob/main/LICENSE">MIT License</a>.',
       copyright:
         'Copyright © 2024-present <a href="https://github.com/mahabubx7">@mahabubx7</a>'
     },
@@ -89,7 +89,7 @@ export default defineConfig({
         icon: "npm",
         link: "https://www.npmjs.com/package/akarjs"
       },
-      { icon: "github", link: "https://github.com/mahabubx7/akarjs" }
+      { icon: "github", link: "https://github.com/mahabubx7/akar" }
     ]
   }
 })
