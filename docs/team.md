@@ -16,7 +16,7 @@ const members = [
     title: 'Creator',
     links: [
       { icon: 'github', link: 'https://github.com/mahabubx7' },
-      // { icon: '', link: ''},
+      { icon: 'twitter', link: 'https://x.com/iam_mahabub'},
       { icon: 'linkedin', link: 'https://linkedin.com/in/mahabubx7' }
     ]
   },

@@ -17,6 +17,12 @@ To install the npm package, follow these steps:
 1. Open your terminal.
 2. Run the following command to install the package:
 
+::: tip
+
+We are assuming that `Deno ^2.0` runtime can use our package with its built-in node.js runtime supports.
+
+:::
+
 ::: code-group
 
 ```sh [npm]

@@ -1,7 +1,7 @@
 # Welcome!
 
 ::: info
-This package is available with its latest release `v1.0.1`.
+This package is available with its latest release `v1.0.1` or later.
 It is still in `development` and very soon will have its first stable/lts release.
 :::
 

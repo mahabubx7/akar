@@ -1,5 +1,5 @@
 # Enum
 
 ::: info
-We are wotking on it.
+Work in progress ⏳
 :::

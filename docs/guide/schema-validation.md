@@ -298,7 +298,7 @@ console.log(port.parse(65999)) // <-- errors
 
 ::: warning
 
-If you face any issue or problem using this in JavaScript, please let us know. You can also create an issue for that.
+If you face any issue or problem using this in JavaScript/TypeScript, please let us know. You can also create an issue for that.
 
 :::
 
