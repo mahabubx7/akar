@@ -14,6 +14,18 @@ import {
   getCountryByNameValue
 } from "../helpers"
 
+export interface PwdOptions {
+  uppercase?: boolean
+  minUppercase?: number
+  lowercase?: boolean
+  minLowercase?: number
+  number?: boolean
+  minNumber?: number
+  special?: boolean
+  minSpecial?: number
+  min?: number
+}
+
 // String: check the type
 export const isString = (input: unknown): input is string =>
   typeof input === "string"
@@ -225,20 +237,7 @@ export const isHSL = (input: string): boolean =>
   /^hsl\(\d{1,3},\d{1,3}%,\d{1,3}%\)$/i.test(input)
 
 // Password: check if the string is a valid password
-export const isPassword = (
-  input: string,
-  options: {
-    uppercase?: boolean
-    minUppercase?: number
-    lowercase?: boolean
-    minLowercase?: number
-    number?: boolean
-    minNumber?: number
-    special?: boolean
-    minSpecial?: number
-    min?: number
-  }
-): boolean => {
+export const isPassword = (input: string, options: PwdOptions): boolean => {
   if (options.min && input.length < options.min) return false
   if (
     options.minUppercase &&
