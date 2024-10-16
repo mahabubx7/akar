@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/mahabubx7/akar/compare/v1.0.1...v1.0.2) (2024-10-16)
+
+
+### Bug Fixes
+
+* added missing password validator ([8dcf2de](https://github.com/mahabubx7/akar/commit/8dcf2defb841612fba3cebf36bd2c6b452ce5302))
+
 ## [1.0.1](https://github.com/mahabubx7/akar/compare/v1.0.0...v1.0.1) (2024-10-16)
 
 
