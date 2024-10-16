@@ -8,7 +8,7 @@
 
 import { CountryNameKey, CountryNames, CountryPhoneCode } from "../helpers"
 import { stringChecker } from "../validators"
-import { isString } from "../validators/string"
+import { isString, PwdOptions } from "../validators/string"
 import { AkarBase } from "./base"
 
 export class AkarString extends AkarBase<string> {
@@ -44,6 +44,7 @@ export class AkarString extends AkarBase<string> {
   private isCountry: boolean = false
   private isPostalCode: boolean = false
   private isPassport: boolean = false
+  private isPassword: null | PwdOptions = null
   private isCurrency: boolean = false
   private isDataUri: boolean = false
   private isMimeType: boolean = false
@@ -212,6 +213,11 @@ export class AkarString extends AkarBase<string> {
 
   passport(): this {
     this.isPassport = true
+    return this
+  }
+
+  password(options: PwdOptions): this {
+    this.isPassword = options
     return this
   }
 
@@ -585,6 +591,16 @@ export class AkarString extends AkarBase<string> {
       errors.push({
         field: "string",
         reason: "Invalid passport number"
+      })
+    }
+
+    if (
+      this.isPassword !== null &&
+      !stringChecker.isPassword(input, this.isPassword)
+    ) {
+      errors.push({
+        field: "string",
+        reason: "Invalid password"
       })
     }
 
