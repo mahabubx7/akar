@@ -15,7 +15,6 @@
 <br />
 <br />
 
-
 > Docs are available now! But still working on it.
 
 ### Installation
@@ -92,7 +91,7 @@ type UserTypeWithConditionals = {
 */
 ```
 
-_For more, please visit our documentation website: [akar.js.org](https://mahabubx7.github.io/akar)_
+_For more, please visit our documentation website: [akar.js.org](https://akar.js.org)_
 
 Thanks,
 

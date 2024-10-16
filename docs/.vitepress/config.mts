@@ -4,13 +4,15 @@ import { defineConfig } from "vitepress"
 export default defineConfig({
   title: "Akar.js",
   description: "Simple & lightweight data validation library",
-  base: "/akar/",
+  // base: "/akar/", // for github pages only
   // lang: "en",
   sitemap: {
-    hostname: "https://mahabubx7.github.io/akar/"
+    // hostname: "https://mahabubx7.github.io/akar/" // for github pages only
+    hostname: "https://akar.js.org"
   },
   lastUpdated: true,
-  head: [["link", { rel: "icon", href: "/akar/favicon.ico" }]],
+  // head: [["link", { rel: "icon", href: "/akar/favicon.ico" }]], // for github pages only
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
