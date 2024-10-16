@@ -17,23 +17,25 @@ To install the npm package, follow these steps:
 1. Open your terminal.
 2. Run the following command to install the package:
 
-<Tabs>
-  <TabItem value="npm" label="npm">
+::: code-group
 
-```sh
-npm install akarjs
+```sh [npm]
+$ npm add akarjs
 ```
 
-  </TabItem>
-
-  <TabItem value="yarn" label="yarn">
-
-```sh
-yarn add akarjs
+```sh [pnpm]
+$ pnpm add akarjs
 ```
 
-  </TabItem>
-</Tabs>
+```sh [yarn]
+$ yarn add akarjs
+```
+
+```sh [bun]
+$ bun add akarjs
+```
+
+:::
 
 3. Verify the installation by checking the package version:
 

@@ -51,8 +51,8 @@ export default defineConfig({
         base: "/guide",
         items: [
           { text: "Get Started", link: "/get-started" },
-          { text: "Define Schema", link: "/schema" },
-          { text: "Data Validation", link: "/validation" }
+          { text: "Schema & Validation", link: "/schema-validation" },
+          { text: "Infer Types", link: "/infer-types" }
         ]
       },
       {
