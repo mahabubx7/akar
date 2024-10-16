@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/public/akar-js.png" alt="akar-js" width="360" />
+  <img src="./docs/public/akar-js.png" alt="akar-js" width="320" />
 </div>
 
 <div align="center">
@@ -23,24 +23,6 @@
 
 ```bash
 npm install akarjs
-```
-
-**yarn**
-
-```bash
-yarn add akarjs
-```
-
-**pnpm**
-
-```bash
-pnpm add akarjs
-```
-
-**bun**
-
-```bash
-bun add akarjs
 ```
 
 ### Example usages
@@ -93,6 +75,8 @@ type UserTypeWithConditionals = {
 
 _For more, please visit our documentation website: [akar.js.org](https://akar.js.org)_
 
+Made with 💚 by @mahabubx7
+
 Thanks,
 
-~/@mahabubx7
+~/[Mahabub](https://github.com/mahabubx7)

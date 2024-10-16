@@ -1,6 +1,6 @@
 {
   "name": "akarjs",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "description": "Akar.js is a simple and lightweight schema based data-validation library.",
   "type": "module",
   "main": "dist/index.cjs",
@@ -37,7 +37,11 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.12.0",
-    "@release-it/conventional-changelog": "^9.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
     "@vitest/coverage-v8": "^2.1.2",
     "@vitest/ui": "^2.1.2",
     "badgen": "^3.2.3",
@@ -47,8 +51,8 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "release-it": "^17.8.2",
     "rimraf": "^6.0.1",
+    "semantic-release": "^24.1.2",
     "tsup": "^8.3.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.8.1",
@@ -66,11 +70,13 @@
   "keywords": [
     "akar",
     "akarjs",
-    "validation",
-    "typescript"
+    "schema",
+    "data-validation",
+    "typescript",
+    "type-generator"
   ],
   "contributors": [
-    "Mahabub <mahabubx7@gmail.com>, akar.js.org"
+    "Mahabub <mahabubx7@gmail.com>, akarjs"
   ],
   "exports": {
     ".": {
@@ -105,6 +111,11 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "publishPath": "./"
   },
   "lint-staged": {
     "*.(ts,js)": [
