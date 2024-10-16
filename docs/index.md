@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+
 hero:
   name: Akar.js
   text: Type-safe data validation library.
