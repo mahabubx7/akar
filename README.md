@@ -79,4 +79,4 @@ Made with 💚 by @mahabubx7
 
 Thanks,
 
-~/[Mahabub](https://github.com/mahabubx7)
+~/[Mahabub](https://mahabubx7.netlify.app)
