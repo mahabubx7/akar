@@ -27,7 +27,7 @@ jobs:
 
       - name: Run release-it
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
 
@@ -39,4 +39,4 @@ jobs:
           git commit -m 'chore(release): Update CHANGELOG.md'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}

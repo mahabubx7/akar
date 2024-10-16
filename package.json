@@ -55,12 +55,12 @@
     "vitepress": "^1.4.1",
     "vitest": "^2.1.2"
   },
-  "homepage": "https://mahabubx7.github.io/akarjs",
+  "homepage": "https://akar.js.org",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mahabubx7/akarjs.git"
+    "url": "git+https://github.com/mahabubx7/akar.git"
   },
-  "bugs": "https://github.com/mahabubx7/akarjs/issues",
+  "bugs": "https://github.com/mahabubx7/akar/issues",
   "license": "MIT",
   "author": "Mahabub <mahabubx7@gmail.com>",
   "keywords": [
@@ -70,7 +70,7 @@
     "typescript"
   ],
   "contributors": [
-    "Mahabub <mahabubx7@gmail.com>"
+    "Mahabub <mahabubx7@gmail.com>, akar.js.org"
   ],
   "exports": {
     ".": {
