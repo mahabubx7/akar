@@ -1,6 +1,6 @@
 {
   "name": "akarjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Akar.js is a simple and lightweight schema based data-validation library.",
   "type": "module",
   "main": "dist/index.cjs",
