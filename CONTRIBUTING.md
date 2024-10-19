@@ -16,20 +16,22 @@ Thank you for considering contributing to this project! Here’s a quick guide t
      git clone https://github.com/mahabubx7/akar.git
      cd akar
      ```
+3. **Get Assigned or Make a proposal first**
+   - Before you start working, please choose your task first or make proposal for something that is missing or might be good for our package. Then ask for approval/assign to that. Remember, you must open or get assigned to an issue first. Then you can refer that issue in commits (optional for now) and push your work.
 
-3. **Create a New Branch**:
+5. **Create a New Branch**:
    - Before making changes, create a new branch based on the `main` branch:
      ```bash
      git checkout -b feature/your-feature-name
      ```
 
-4. **Install Dependencies**:
+6. **Install Dependencies**:
    - Install the project dependencies:
      ```bash
      npm install
      ```
 
-5. **Run Tests**:
+7. **Run Tests**:
    - Make sure your changes don't break anything by running the tests:
      ```bash
      npm test
