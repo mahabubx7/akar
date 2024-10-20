@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/mahabubx7/akar/compare/v1.0.2...v1.0.3) (2024-10-20)
+
+
+### Bug Fixes
+
+* array range validation-parser ([fe2f4e3](https://github.com/mahabubx7/akar/commit/fe2f4e3d5094e499fbcfcfd8c71d50a1452dc40d))
+
 ## [1.0.2](https://github.com/mahabubx7/akar/compare/v1.0.1...v1.0.2) (2024-10-16)
 
 
