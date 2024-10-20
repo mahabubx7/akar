@@ -331,9 +331,9 @@ describe("String validators", () => {
     expect(str.isWeekday("8")).toBe(false)
     expect(str.isWeekday("0")).toBe(false)
     expect(str.isWeekday("7")).toBe(false)
-    expect(str.isWeekday("mon")).toBe(true)
-    expect(str.isWeekday("tue")).toBe(true)
-    expect(str.isWeekday("wed")).toBe(true)
+    expect(str.isWeekday("monday")).toBe(true)
+    expect(str.isWeekday("tuesday")).toBe(true)
+    expect(str.isWeekday("wednesday")).toBe(true)
   })
 
   test("isSlug", () => {

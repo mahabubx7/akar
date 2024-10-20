@@ -412,11 +412,21 @@ export const isHour = (input: string): boolean =>
 
 // Minute or Seconds: check if the string is a valid minute
 export const isMinuteOrSeconds = (input: string): boolean =>
-  /^[0-5][0-9]$/.test(input)
+  /^[0-6][0-9]$/.test(input) && Number(input) <= 60
 
 // Weekday: check if the string is a valid weekday
-export const isWeekday = (input: string): boolean =>
-  /^(mon|tue|wed|thu|fri|sat|sun)$/i.test(input.toLowerCase())
+export const isWeekday = (input: string): boolean => {
+  const weekdays = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday"
+  ]
+  return weekdays.includes(input.toLowerCase())
+}
 
 // Base: check if the string is a valid base
 export const isBase = (input: string, base: number): boolean =>
