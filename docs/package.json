@@ -12,7 +12,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^6.2.0",
     "vitepress": "^1.4.1"
   }
 }

@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - next # For pre-releases
+    paths:
+      - "lib/**" # Source code
 
 jobs:
   release:
