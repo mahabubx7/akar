@@ -10,10 +10,10 @@
 export const isArray = <T>(input: unknown): input is T[] => Array.isArray(input)
 
 // Empty: check if the array is empty
-export const isEmpty = <T>(input: T[]): boolean => input.length === 0
+// export const isEmpty = <T>(input: T[]): boolean => input.length === 0
 
-// Not Empty: check if the array is not empty
-export const isNotEmpty = <T>(input: T[]): boolean => input.length > 0
+// // Not Empty: check if the array is not empty
+// export const isNotEmpty = <T>(input: T[]): boolean => input.length > 0
 
 // Length: check if the array length is equal to the expected length
 export const length = <T>(input: T[], expected: number): boolean =>

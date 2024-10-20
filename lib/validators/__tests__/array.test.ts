@@ -11,18 +11,6 @@ describe("Array validators", () => {
     expect(arr.isArray(undefined)).toBe(false)
   })
 
-  test("isEmpty", () => {
-    expect(arr.isEmpty([])).toBe(true)
-    expect(arr.isEmpty([1])).toBe(false)
-    expect(arr.isEmpty([1, 2])).toBe(false)
-  })
-
-  test("isNotEmpty", () => {
-    expect(arr.isNotEmpty([])).toBe(false)
-    expect(arr.isNotEmpty([1])).toBe(true)
-    expect(arr.isNotEmpty([1, 2])).toBe(true)
-  })
-
   test("length", () => {
     expect(arr.length([], 0)).toBe(true)
     expect(arr.length([1], 1)).toBe(true)
