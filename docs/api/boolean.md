@@ -7,13 +7,13 @@ Boolean is a data type that can have one of two values: `true` or `false`.
 ## Table of Contents
 
 - [Schema & Validators](#schema--validators)
-  - [default](#default)
-  - [exact](#exact)
+- [default](#default)
+- [exact](#exact)
 - [Conclusion](#conclusion)
 
 ## Schema & Validators
 
-### default
+## default
 
 By default, the boolean schema does not have any validators. It only checks if the value is a boolean.
 
@@ -51,7 +51,7 @@ console.log(resultOne, resultTow)
 { value: false }
 ```
 
-### exact `.exact(value: boolean)`
+## `.exact(value: boolean)`
 
 The `exact` validator checks if the value is exactly equal to the provided value.
 

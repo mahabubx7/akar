@@ -5,15 +5,15 @@ The `Object` class is the base class for all objects in the game. It provides a 
 ## Table of Contents
 
 - [Schema & Validators](#schema-and-validators)
-  - [EqualTo](#equal-to)
-  - [DeepEqualTo](#not-equal-to)
-  - [ShallowEqualTo](#shallow-equal-to)
-  - [JsonObject](#json-object)
+- [EqualTo](#equal-to)
+- [DeepEqualTo](#not-equal-to)
+- [ShallowEqualTo](#shallow-equal-to)
+- [JsonObject](#json-object)
 - [Conclusion](#conclusion)
 
 ## Schema and Validators
 
-### EqualTo `.equalTo()`
+## `.equalTo()`
 
 This validator is used to check if the object is equal to the provided object or not. If the object is not equal to the provided object, it will return an error.
 
@@ -88,7 +88,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### DeepEqualTo `.deepEqualTo()`
+## `.deepEqualTo()`
 
 This validator is used to check if the object is deeply equal to the provided object or not. If the object is not deeply equal to the provided object, it will return an error.
 
@@ -163,7 +163,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### ShallowEqualTo `.shallowEqualTo()`
+## `.shallowEqualTo()`
 
 This validator is used to check if the object is shallowly equal to the provided object or not. If the object is not shallowly equal to the provided object, it will return an error.
 
@@ -238,7 +238,7 @@ console.log(resultOne, resultTow)
   }
 ```
 
-### JsonObject `.jsonObject()`
+## `.jsonObject()`
 
 This validator is used to check if the object is a valid JSON object or not. If the object is not a valid JSON object, it will return an error.
 

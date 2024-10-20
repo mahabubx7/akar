@@ -7,17 +7,17 @@ Our array schema is always dependent on others. Becasue, array is a collection o
 ## Table of Contents
 
 - [Schema & Validators](#schema-and-validators)
-  - [unique](#unique)
-  - [min](#min)
-  - [max](#max)
-  - [range](#range)
-  - [objects](#objects)
-  - [enums](#enums)
+- [unique](#unique)
+- [min](#min)
+- [max](#max)
+- [range](#range)
+- [objects](#objects)
+- [enums](#enums)
 - [Conclusion](#conclusion)
 
 ## Schema and Validators
 
-### Unique `.unique()`
+## `.unique()`
 
 This validator is used to check if the array has unique values or not. If the array has duplicate values, it will return an error.
 
@@ -91,7 +91,7 @@ console.log(resultOne, resultTow)
 
 :::
 
-### Min `.min()`
+## `.min()`
 
 This validator is used to check if the array has a minimum number of elements or not. If the array has fewer elements than the specified number, it will return an error.
 
@@ -159,7 +159,7 @@ console.log(resultOne, resultTow)
 
 :::
 
-### Max `.max()`
+## `.max()`
 
 This validator is used to check if the array has a maximum number of elements or not. If the array has more elements than the specified number, it will return an error.
 
@@ -227,7 +227,7 @@ console.log(resultOne, resultTow)
 
 :::
 
-### Range `.range()`
+## `.range()`
 
 This validator is used to check if the array has a range of elements or not. If the array has fewer or more elements than the specified range, it will return an error.
 
@@ -295,7 +295,7 @@ console.log(resultOne, resultTow)
 
 :::
 
-### Objects
+## Objects
 
 This validator is used to check if the array has a specific object schema or not. If the array has an object that does not match the specified schema, it will return an error.
 
@@ -399,7 +399,7 @@ You can also use the `min`, `max`, `range` validators with this object based sch
 
 :::
 
-### Enums
+## Enums
 
 This validator is used to check if the array has specific values or not. If the array has a value that is not in the specified list, it will return an error.
 

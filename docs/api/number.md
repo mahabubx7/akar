@@ -7,27 +7,27 @@ You can define a schema of a number using the `a.number()` method. This method w
 ## Table of Contents
 
 - [Schema & Validators](#schema-and-validators)
-  - [min](#min)
-  - [max](#max)
-  - [range](#range)
-  - [integer](#integer)
-  - [float](#float)
-  - [unsigned](#unsigned)
-  - [signed](#signed)
-  - [odd](#odd)
-  - [even](#even)
-  - [divisibleBy](#divisibleby)
-  - [port](#port)
-  - [binary](#binary)
-  - [octal](#octal)
-  - [hex](#hex)
-  - [prime](#prime)
-  - [perfect](#perfect)
+- [min](#min)
+- [max](#max)
+- [range](#range)
+- [integer](#integer)
+- [float](#float)
+- [unsigned](#unsigned)
+- [signed](#signed)
+- [odd](#odd)
+- [even](#even)
+- [divisibleBy](#divisibleby)
+- [port](#port)
+- [binary](#binary)
+- [octal](#octal)
+- [hex](#hex)
+- [prime](#prime)
+- [perfect](#perfect)
 - [Conclusion](#conclusion)
 
 ## Schema and Validators
 
-### min `.min(value: number)`
+## `.min(value: number)`
 
 This validator is used to check if the number is greater than or equal to the specified value.
 
@@ -72,7 +72,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### max `.max(value: number)`
+## `.max(value: number)`
 
 This validator is used to check if the number is less than or equal to the specified value.
 
@@ -117,7 +117,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### range `.range(min: number, max: number)`
+## `.range(min: number, max: number)`
 
 This validator is used to check if the number is within the specified range.
 
@@ -162,7 +162,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### integer `.integer()`
+## `.integer()`
 
 This validator is used to check if the number is an integer.
 
@@ -207,7 +207,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### float `.float()`
+## `.float()`
 
 This validator is used to check if the number is a float.
 
@@ -252,7 +252,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### unsigned `.unsigned()`
+## `.unsigned()`
 
 This validator is used to check if the number is an unsigned number.
 
@@ -297,7 +297,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### signed `.signed()`
+## `.signed()`
 
 This validator is used to check if the number is a signed number.
 
@@ -342,7 +342,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### odd `.odd()`
+## `.odd()`
 
 This validator is used to check if the number is an odd number.
 
@@ -387,7 +387,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### even `.even()`
+## `.even()`
 
 This validator is used to check if the number is an even number.
 
@@ -432,7 +432,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### divisibleBy `.divisibleBy(value: number)`
+## `.divisibleBy(value: number)`
 
 This validator is used to check if the number is divisible by the specified value.
 
@@ -477,7 +477,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### port `.port()`
+## `.port()`
 
 This validator is used to check if the number is a valid port number.
 
@@ -523,7 +523,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### binary `.binary()`
+## `.binary()`
 
 This validator is used to check if the number is a valid binary number.
 
@@ -568,7 +568,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### octal `.octal()`
+## `.octal()`
 
 This validator is used to check if the number is a valid octal number.
 
@@ -613,7 +613,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### hex `.hex()`
+## `.hex()`
 
 This validator is used to check if the number is a valid hexadecimal number.
 
@@ -658,7 +658,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### prime `.prime()`
+## `.prime()`
 
 This validator is used to check if the number is a prime number.
 
@@ -703,7 +703,7 @@ console.log(resultOne, resultTow)
 }
 ```
 
-### perfect `.perfect()`
+## `.perfect()`
 
 This validator is used to check if the number is a perfect number.
 

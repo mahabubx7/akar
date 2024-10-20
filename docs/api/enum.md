@@ -7,7 +7,7 @@ Enum is a data type that can have one of a specific set of values. It is similar
 ## Table of Contents
 
 - [Schema & Validators](#schema--validators)
-  - [default](#default)
+- [default](#default)
 - [Conclusion](#conclusion)
 
 ## Schema & Validators
@@ -81,7 +81,7 @@ console.log(resultOne, resultTow, resultThree, resultFour)
 
 :::
 
-### default `.default(value: string)`
+## `.default(value: string)`
 
 The `default` validator sets the default value of the schema if the value is `undefined`.
 
