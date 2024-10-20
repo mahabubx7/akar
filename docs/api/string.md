@@ -17,6 +17,7 @@ String is a data type that represents a sequence of characters. It is used to st
 - [Lowercase](#lowercase)
 - [Uppercase](#uppercase)
 - [Phone](#phone)
+- [Email](#email)
 - [Hex](#hex)
 - [Base64](#base64)
 - [Base64URL](#base64url)
@@ -513,6 +514,51 @@ console.log(resultOne, resultTow)
     {
       reason: 'Value must be a valid phone number',
       value: '1234567890',
+    }
+  ]
+}
+```
+
+## `email()`
+
+The `email` validator checks if the string is a valid email address.
+
+::: code-group
+
+```typescript
+// define a schema for string with email validator
+const stringSchema = a.string().email()
+
+// validate & parse the string
+const resultOne = stringSchema.parse("john.doe@gmail.com") // valid
+const resultTow = stringSchema.parse("john.doe@gmail") // invalid
+
+console.log(resultOne, resultTow)
+```
+
+```javascript
+// define a schema for string with email validator
+const stringSchema = a.string().email()
+
+// validate & parse the string
+const resultOne = stringSchema.parse("john.doe@gmail.com") // valid
+const resultTow = stringSchema.parse("john.doe@gmail") // invalid
+
+console.log(resultOne, resultTow)
+```
+
+:::
+
+**Output**
+
+```bash
+{ value: 'john.doe@gmail.com' }
+
+{
+  errors: [
+    {
+      reason: 'Value must be a valid email address',
+      value: 'john.doe@gmail',
     }
   ]
 }
