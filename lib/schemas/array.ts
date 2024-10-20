@@ -12,7 +12,7 @@ import { AkarBase } from "./base"
 export class AkarArray<T> extends AkarBase<T[]> {
   private miniumLength?: number
   private maximumLength?: number
-  private hasRange: [number, number] = [0, -1]
+  private hasRange: [number, number] | null = null
   private isUnique?: boolean
 
   constructor(private schema: AkarBase<T>) {
@@ -72,6 +72,14 @@ export class AkarArray<T> extends AkarBase<T[]> {
       errors.push({
         field: "array",
         reason: `Expected at most ${this.maximumLength} items`,
+        value: input
+      })
+    }
+
+    if (this.hasRange && !arrayChecker.rangeLength(input, ...this.hasRange)) {
+      errors.push({
+        field: "array",
+        reason: `Expected between ${this.hasRange[0]} and ${this.hasRange[1]} items`,
         value: input
       })
     }
