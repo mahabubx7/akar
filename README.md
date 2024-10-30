@@ -2,15 +2,9 @@
   <img src="./docs/public/akar-js.png" alt="akar-js" width="320" />
 </div>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/TEST-PASSES-12A513?labelColor=107A77&style=flat&logo=vitest&logoColor=FFF" alt="TEST" />
+ [![Run Linters](https://github.com/mahabubx7/akar/actions/workflows/linter.yml/badge.svg)](https://github.com/mahabubx7/akar/actions/workflows/linter.yml) [![Build and Deploy to GitHub Pages](https://github.com/mahabubx7/akar/actions/workflows/pages.yml/badge.svg)](https://github.com/mahabubx7/akar/actions/workflows/pages.yml)
 
-<a href="https://hits.dwyl.com/mahabubx7/akar"><img src="https://hits.dwyl.com/mahabubx7/akar.svg" alt="hits" /></a>
-<br />
-<a href="https://www.npmjs.com/package/akarjs" target="_blank">
 <img src="https://nodei.co/npm/akarjs.png?downloads=true&downloadRank=true&stars=true" alt="npm-link" />
-</a>
-
 </div>
 
 <br />
