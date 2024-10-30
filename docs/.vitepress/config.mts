@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress"
+import pkg from "../package.json"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -26,8 +27,20 @@ export default defineConfig({
     nav: [
       { text: "Guide", link: "/guide" },
       { text: "Reference", link: "/api" },
-      { text: "Our Team", link: "/team" }
-
+      { text: "Our Team", link: "/team" },
+      {
+        text: `v${pkg.version}`,
+        items: [
+          {
+            text: "Releases",
+            link: "https://github.com/mahabubx7/akar/releases"
+          },
+          {
+            text: "New Issue",
+            link: "https://github.com/mahabubx7/akar/issues/new/choose"
+          }
+        ]
+      }
       // sponsers place
     ],
 
