@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "akar.js documentation website using vitepress",
   "main": "index.js",
   "scripts": {
